@@ -16,6 +16,7 @@ public class ItemServiceImpl implements ItemService {
 
   @Transactional(isolation = Isolation.SERIALIZABLE)
   public Brands getBrand(Integer brandId) {
-    return this.brandsDao.getBrandsById(brandId);
+    System.out.println("品牌ID: "+brandId);
+    return this.brandsDao.getBrands(brandId);
   }
 }

@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="sample.mapper.BrandsMapper">
+<mapper namespace="sample.dao.BrandsDao">
 	<resultMap type="sample.domain.Brands" id="rem">
 		<id  property="brandId"        column="brand_id" javaType="Integer" jdbcType="INTEGER"/> 
 		<result  property="cateId"        column="cate_id" javaType="Integer" jdbcType="INTEGER"/>  
@@ -17,8 +17,8 @@
 		<result  property="brandNmEn"        column="brand_nm_en" javaType="String" jdbcType="VARCHAR"/>  
 		<result  property="brandNmKo"        column="brand_nm_ko" javaType="String" jdbcType="VARCHAR"/>  
 	</resultMap>
-	<select id="getBrandsById" resultMap="rem" parameterType="java.lang.Integer">
-		select * from brands where brand_id=11022
+	<select id="getBrands" resultMap="rem" parameterType="java.lang.Integer">
+		select * from brands where brand_id=${value}
 	</select>
 
 </mapper>

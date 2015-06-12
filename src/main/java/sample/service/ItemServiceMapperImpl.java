@@ -5,13 +5,13 @@ import javax.inject.Inject;
 import org.mybatis.guice.transactional.Isolation;
 import org.mybatis.guice.transactional.Transactional;
 
+import sample.dao.BrandsDao;
 import sample.domain.Brands;
-import sample.mapper.BrandsMapper;
 
 public class ItemServiceMapperImpl implements ItemService {
 
   @Inject
-  private BrandsMapper brandsDao;
+  private BrandsDao brandsDao;
 
 
   @Transactional(isolation = Isolation.SERIALIZABLE)
